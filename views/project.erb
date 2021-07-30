@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @volunteers.each do |volunteer|  %>
+          <% @volunteers.sort_by {|volunteer| volunteer.hours}.each do |volunteer|  %>
             <tr>
               <th scope="row"><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></th>
               <td><%= volunteer.hours %></td>
