@@ -1,22 +1,26 @@
 body {
-  background-color:#c4fff9;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #c4fff9;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .main-container {
-  background-color: rgba(255,255,255,.75);
+  background-color: rgba(255, 255, 255, .75);
 }
+
 .btn {
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
 }
 
 .card-body {
-  background-color: rgba(156, 234, 239,.9);
-  border-radius:1rem;
+  background-color: rgba(156, 234, 239, .9);
+  border-radius: 1rem;
   border: solid #c4fff9 .25rem;
 }
+
 .card {
-  border-radius:1rem;
+  border-radius: 1rem;
 }
+
 .btn-primary {
   background-color: rgb(7, 190, 184);
   border: solid #c4fff9 1px;
@@ -24,19 +28,34 @@ body {
 
 .btn-primary:hover {
   background-color: #C4FFF9;
-  color:#07BEB8;
+  color: #07BEB8;
   border: solid #c4fff9 1px;
 }
+
+.btn-primary:focus {
+  background-color: #C4FFF9;
+  color: #007470;
+  border: solid #c4fff9 1px;
+}
+
 .leaderboard {
   border: solid #68D8D6 .5rem;
   border-radius: 1rem;
   background-color: white;
 }
+
 a {
   color: #303030;
   text-decoration: none;
 }
+
 a:hover {
   color: #ffffff;
-  background-color:#07BEB8;
+  background-color: #07BEB8;
+}
+
+.danger {
+  border: solid rgb(218, 57, 73) .5rem;
+  border-radius: 1rem;
+  background-color: white;
 }

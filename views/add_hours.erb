@@ -3,16 +3,27 @@
   <input name="project_id" type="hidden" value="<%=@project.id%>">
   <div class="form-group">
     <% if @volunteers.any?%>
-        <label for="volunteer">Volunteer</label>
-      <select id = "volunteer" name="volunteer_id" class="form-select">
-        <% @volunteers.sort_by {|volunteer| volunteer.name.downcase}.each do |volunteer| %>
-          <option name="<%= volunteer.name %>" value="<%= volunteer.id %>"><%= volunteer.name %></option>
-        <% end %>
-      </select>
-      <input name="hours" type="number" min=0>
+      <div class="row">
+        <div class="col">
+          <label for="volunteer">Volunteer</label>
+          <select id = "volunteer" name="volunteer_id" class="form-select">
+            <% @volunteers.sort_by {|volunteer| volunteer.name.downcase}.each do |volunteer| %>
+              <option name="<%= volunteer.name %>" value="<%= volunteer.id %>"><%= volunteer.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="col">
+          <label for="hours">Hours</label>
+          <input class="form-control" name="hours" type="number" min=0>
+        </div>
+      </div>
     <% else %>
       <p>There are currently no available volunteers.</p>
     <% end %>
+    <div class="row">
+      <div class="col">
+        <button type="submit"class="btn btn-primary mt-3">Add Hours</button>
+      </div>
+    </div>
   </div>
-  <button type="submit"class="btn btn-primary mt-3">Add Hours</button>
 </form>

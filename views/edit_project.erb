@@ -1,13 +1,20 @@
-<form action="/project/<%=@project.id%>/edit" method="post">
-  <input name="_method" type="hidden" value="patch">
-  <div class="form-group">
-    <label for="title">Update Project Title</label>
-    <input required id="title" name="title" class="form-control" type="text">
+<h1><%=@project.title%></h1>
+<div class="row">
+  <div class="col">
+    <form action="/project/<%=@project.id%>/edit" method="post">
+      <input name="_method" type="hidden" value="patch">
+      <div class="form-group">
+        <label for="title">Update Project Title</label>
+        <input required id="title" name="title" class="form-control" type="text">
+      </div>
+      <button type="submit"class="btn btn-primary mt-3">Update Project</button>
+    </form>
   </div>
-  <button type="submit"class="btn btn-primary mt-3">Update Project</button>
-</form>
-<h2>Delete Project</h2>
-<form action="/project/<%=@project.id%>" method="post">
-  <input name="_method" type="hidden" value="delete">
-  <button type="submit"class="btn btn-danger mt-3">Delete Project</button>
-</form>
+  <div class="col danger">
+    <h2>Delete <%=@project.title%></h2>
+    <form action="/project/<%=@project.id%>" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <button type="submit"class="btn btn-danger mt-3">Delete Project</button>
+    </form>
+  </div>
+</div>
