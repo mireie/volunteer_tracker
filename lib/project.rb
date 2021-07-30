@@ -6,7 +6,11 @@ class Project
   end
 
   def title 
-    @title;
+    @title
+  end
+
+  def id 
+    
   end
 
   # def self.all
