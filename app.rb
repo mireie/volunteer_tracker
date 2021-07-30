@@ -29,7 +29,8 @@ end
 
 get ('/project/:id') do
   @project = Project.find(params[:id].to_i)
-  @volunteers = @project.volunteers
+  @volunteers = Volunteer.all
+  @total_volunteers = @project.volunteers
   erb(:project)
 end
 

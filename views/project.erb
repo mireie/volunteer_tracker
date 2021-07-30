@@ -1,15 +1,24 @@
 <h2><%=@project.title%></h2>
 <a href="/project/<%=@project.id%>/edit">Edit Project</a>
 <h3>Volunteers</h3>
-
 <% if @volunteers.any? %>
-  <ul>
-    <% @volunteers.each do |volunteer| %>
-      <li><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Volunteer</th>
+        <th scope="col">Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @volunteers.each do |volunteer|  %>
+        <tr>
+          <th scope="row"><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></th>
+          <td><%= volunteer.hours %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p>There are currently no volunteers to display. Be the first!</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are currently no volunteers to display. Be the first!</p>
-<% end %>
-
-<%=erb(:new_volunteer)%>
+    <%=erb(:new_volunteer)%>

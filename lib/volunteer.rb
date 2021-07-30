@@ -14,6 +14,9 @@ class Volunteer
   end
 
   def hours
+    if !@hours
+      @hours = 0
+    end
     @hours
   end
   
