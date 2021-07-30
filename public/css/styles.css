@@ -1,0 +1,9 @@
+body {
+  background-color:#303030;
+}
+.main-container {
+  background-color: rgba(255,255,255,.75);
+}
+.btn {
+  margin-bottom:1rem;
+}
