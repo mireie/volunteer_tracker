@@ -1,0 +1,3 @@
+coverage/
+capybara-*.html
+*.code-workspace
