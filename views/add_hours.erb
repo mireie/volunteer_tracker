@@ -5,7 +5,7 @@
     <% if @volunteers.any?%>
         <label for="volunteer">Volunteer</label>
       <select id = "volunteer" name="volunteer_id" class="form-select">
-        <% @volunteers.each do |volunteer| %>
+        <% @volunteers.sort_by {|volunteer| volunteer.name.downcase}.each do |volunteer| %>
           <option name="<%= volunteer.name %>" value="<%= volunteer.id %>"><%= volunteer.name %></option>
         <% end %>
       </select>

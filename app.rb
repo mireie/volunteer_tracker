@@ -52,7 +52,7 @@ end
 post ('/volunteer/project/:id') do
   @volunteer = Volunteer.new(:name => params[:name], :project_id => params[:id])
   @volunteer.save
-  redirect to ("/")
+  redirect to ("/project/#{params[:id]}")
 end
 
 patch ('/project/:id/edit') do
