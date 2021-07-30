@@ -43,6 +43,11 @@ describe Volunteer do
       volunteer1.save
       expect(Volunteer.all).to eq [volunteer1]
     end
+    it 'adds hours if specified' do
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :hours => 5})
+      volunteer1.save
+      expect(volunteer1.hours.to_i).to eq 5
+    end
   end
 
   describe '.find' do

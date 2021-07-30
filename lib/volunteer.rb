@@ -1,6 +1,5 @@
 class Volunteer
-  attr_reader :id
-  attr_accessor :project_id
+  attr_reader :id, :project_id, :hours
 
   def initialize(attributes)
     attributes.each { |kvp| instance_variable_set("@#{kvp[0].to_s}", kvp[1].to_s.gsub("'") { "&#39;" }) }
@@ -12,6 +11,10 @@ class Volunteer
 
   def id 
     @id
+  end
+
+  def hours
+    @hours
   end
   
   def project_id 

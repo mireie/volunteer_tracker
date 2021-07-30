@@ -15,6 +15,18 @@ get ('/') do
   erb(:index)
 end
 
+get ('/projects') do
+  @projects = Project.all
+  @volunteers = Volunteer.all
+  erb(:projects)
+end
+
+get ('/volunteers') do
+  @projects = Project.all
+  @volunteers = Volunteer.all
+  erb(:volunteers)
+end
+
 get ('/project/:id') do
   @project = Project.find(params[:id].to_i)
   @volunteers = @project.volunteers
