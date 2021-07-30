@@ -1,6 +1,6 @@
 body {
   background-color:#c4fff9;
-
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .main-container {
   background-color: rgba(255,255,255,.75);
@@ -12,20 +12,25 @@ body {
 .card-body {
   background-color: rgba(156, 234, 239,.9);
   border-radius:1rem;
+  border: solid #c4fff9 .25rem;
 }
 .card {
   border-radius:1rem;
 }
 .btn-primary {
   background-color: rgb(7, 190, 184);
+  border: solid #c4fff9 1px;
 }
 
 .btn-primary:hover {
   background-color: #C4FFF9;
   color:#07BEB8;
+  border: solid #c4fff9 1px;
 }
 .leaderboard {
-  background-color: #68D8D6;
+  border: solid #68D8D6 .5rem;
+  border-radius: 1rem;
+  background-color: white;
 }
 a {
   color: #303030;
