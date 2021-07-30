@@ -1,12 +1,16 @@
+<h1>Volunteers</h1>
+<% if @volunteers.any? %>
 <%
   hour_sum = 0
   @volunteers.each do |volunteer| 
     hour_sum = hour_sum + volunteer.hours.to_i
   end
 %>
-<h1>Volunteers</h1>
-<p>Our wonderful volunteers make it all happen! It's not a competition, but <strong><%=@volunteers.sort_by {|volunteer| -volunteer.hours.to_i}.first.name%></strong> is totally winning!</p>
+<p>Our wonderful volunteers make it all happen! It's not a competition, but <strong><%=@volunteers.sort_by {|volunteer| -volunteer.hours.to_i}.first.name%></strong> is totally winning! <small><em>(<%=@volunteers.sort_by {|volunteer| -volunteer.hours.to_i}.last.name%> better step it up...</em></small>)</p>
 <p>Together, our <%=@volunteers.length%> volunteers have accumulated <strong><%=hour_sum.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></strong> hours of community service!</p>
 <hr>
 <h2>Volunteer Leaderboard</h2>
 <%=erb(:volunteers)%>
+<% else %>
+<p>There are currently no volunteers, add one!</p>
+<%end%>

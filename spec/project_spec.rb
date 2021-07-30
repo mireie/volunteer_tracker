@@ -1,6 +1,6 @@
-require "spec_helper"
 require "project"
 require "volunteer"
+require "spec_helper"
 
 describe Project do
   describe '#title' do
