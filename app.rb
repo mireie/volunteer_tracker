@@ -35,3 +35,9 @@ patch ('/project/:id/edit') do
   @project.update(params)
   redirect to ("/")
 end
+
+delete ('/project/:id') do
+  @project = Project.find(params[:id].to_i)
+  @project.delete
+  redirect to ("/")
+end
