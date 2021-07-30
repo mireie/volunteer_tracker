@@ -19,7 +19,7 @@ class Project
     returned_projects.each() do |project|
       title = project.fetch("title")
       id = project.fetch("id").to_i
-      projects.push(Project.new({ :project => name, :id => id }))
+      projects.push(Project.new({ :title => title, :id => id }))
     end
     projects
   end
