@@ -1,4 +1,6 @@
 require "spec_helper"
+require "project"
+require "volunteer"
 
 describe Project do
   describe '#title' do
