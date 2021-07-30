@@ -12,7 +12,7 @@
 * Capybara
 
 ## Description
-A one-day project to create a web portal for a volunteer organization to manage projects and volunteers in a one-to-many relationship. Expanded beyond the original requirements to add hour tracking, leaderboards, Bootstrap, auto-populated dropowns, and more.
+A one-day project to create a web portal for a volunteer organization to manage projects and volunteers in a one-to-many relationship. Expanded beyond the original requirements to add hour tracking, leaderboards, Bootstrap, auto-populated dropdowns, and more.
 
 
 ## Setup/Installation Requirements
