@@ -14,9 +14,6 @@ class Volunteer
   end
 
   def hours
-    if !@hours
-      @hours = 0
-    end
     @hours
   end
   
@@ -30,7 +27,8 @@ class Volunteer
     returned_volunteers.each() do |volunteer|
       name = volunteer.fetch("name")
       id = volunteer.fetch("id").to_i
-      volunteers.push(Volunteer.new({ :name => name, :id => id }))
+      hours = volunteer.fetch("hours").to_i
+      volunteers.push(Volunteer.new({ :name => name, :id => id, :hours => hours}))
     end
     volunteers
   end
@@ -59,6 +57,12 @@ class Volunteer
   def update(params)
     @name = params.fetch(:name)
     DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id};")
+  end
+
+  def add_hours(params)
+    hours = DB.exec("SELECT hours FROM volunteers WHERE id = #{params.fetch(:volunteer_id)};").first.fetch("hours").to_i
+    hours += params.fetch(:hours).to_i
+    DB.exec("UPDATE volunteers SET hours = #{hours} WHERE id = #{params.fetch("volunteer_id")};")
   end
 
   def delete

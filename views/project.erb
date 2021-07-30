@@ -1,19 +1,21 @@
-<h2><%=@project.title%></h2>
+<h1><%=@project.title%></h1>
 <a href="/project/<%=@project.id%>/edit">Edit Project</a>
-<h3>Volunteers</h3>
-<% if @volunteers.any? %>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Volunteer</th>
-        <th scope="col">Hours</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @volunteers.each do |volunteer|  %>
-        <tr>
-          <th scope="row"><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></th>
-          <td><%= volunteer.hours %></td>
+<h2>Volunteers</h2>
+<div class="row">
+  <div class="col">
+    <% if @volunteers.any? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Volunteer</th>
+            <th scope="col">Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @volunteers.each do |volunteer|  %>
+            <tr>
+              <th scope="row"><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></th>
+              <td><%= volunteer.hours %></td>
             </tr>
           <% end %>
         </tbody>
@@ -21,4 +23,11 @@
     <% else %>
       <p>There are currently no volunteers to display. Be the first!</p>
     <% end %>
+    <h3>Add Volunteer</h3>
     <%=erb(:new_volunteer)%>
+  </div>
+  <div class="col">
+    <h3>Add Hours</h3>
+    <%=erb(:add_hours)%>
+  </div>
+</div>

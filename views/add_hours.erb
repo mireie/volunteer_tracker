@@ -1,0 +1,17 @@
+<form action="/volunteer/add-hours" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <div class="form-group">
+    <% if @volunteers.any?%>
+        <label for="volunteer">Volunteer</label>
+      <select id = "volunteer" name="volunteer_id" class="form-select">
+        <% @volunteers.each do |volunteer| %>
+          <option name="<%= volunteer.name %>" value="<%= volunteer.id %>"><%= volunteer.name %></option>
+        <% end %>
+      </select>
+      <input name="hours" type="number" min=0>
+    <% else %>
+      <p>There are currently no available volunteers.</p>
+    <% end %>
+  </div>
+  <button type="submit"class="btn btn-primary mt-3">Add Hours</button>
+</form>

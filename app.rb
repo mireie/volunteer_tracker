@@ -68,6 +68,12 @@ patch ('/volunteer/:id/edit') do
   redirect to ("volunteer/#{params[:id]}")
 end
 
+patch ('/volunteer/add-hours') do
+  @volunteer = Volunteer.find(params[:volunteer_id].to_i)
+  @volunteer.add_hours(params)
+  redirect to ("volunteer/#{params[:volunteer_id]}")
+end
+
 delete ('/project/:id') do
   @project = Project.find(params[:id].to_i)
   @project.delete
