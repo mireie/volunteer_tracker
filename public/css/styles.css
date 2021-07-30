@@ -1,11 +1,37 @@
 body {
-  background-color:#303030;
-  background-image: url('https://images.pexels.com/photos/6994833/pexels-photo-6994833.jpeg');
-  background-size: cover;
+  background-color:#c4fff9;
+
 }
 .main-container {
   background-color: rgba(255,255,255,.75);
 }
 .btn {
   margin-bottom:1rem;
+}
+
+.card-body {
+  background-color: rgba(156, 234, 239,.9);
+  border-radius:1rem;
+}
+.card {
+  border-radius:1rem;
+}
+.btn-primary {
+  background-color: rgb(7, 190, 184);
+}
+
+.btn-primary:hover {
+  background-color: #C4FFF9;
+  color:#07BEB8;
+}
+.leaderboard {
+  background-color: #68D8D6;
+}
+a {
+  color: #303030;
+  text-decoration: none;
+}
+a:hover {
+  color: #ffffff;
+  background-color:#07BEB8;
 }
