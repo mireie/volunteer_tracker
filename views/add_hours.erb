@@ -1,5 +1,6 @@
 <form action="/volunteer/add-hours" method="post">
   <input name="_method" type="hidden" value="patch">
+  <input name="project_id" type="hidden" value="<%=@project.id%>">
   <div class="form-group">
     <% if @volunteers.any?%>
         <label for="volunteer">Volunteer</label>

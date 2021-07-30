@@ -54,11 +54,12 @@ class Project
 
   def volunteers
     volunteers = []
-    db_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{@id};")
+    db_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{@id} ORDER BY hours DESC ;")
     db_volunteers.each do |volunteer| 
       name = volunteer.fetch("name")
       id = volunteer.fetch("id").to_i
-      volunteers.push(Volunteer.new(:name => name, :id => id))
+      hours = volunteer.fetch("hours").to_i
+      volunteers.push(Volunteer.new({ :name => name, :id => id, :hours => hours}))
     end
     volunteers
   end

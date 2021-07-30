@@ -22,7 +22,7 @@ class Volunteer
   end
 
   def self.all
-    returned_volunteers = DB.exec("SELECT * FROM volunteers;")
+    returned_volunteers = DB.exec("SELECT * FROM volunteers ORDER BY name ASC;")
     volunteers = []
     returned_volunteers.each() do |volunteer|
       name = volunteer.fetch("name")
@@ -50,7 +50,8 @@ class Volunteer
     if volunteer
       name = volunteer.fetch("name")
       id = volunteer.fetch("id")
-      Volunteer.new({:name => name, :id => id})
+      hours = volunteer.fetch("hours").to_i
+      volunteers.push(Volunteer.new({ :name => name, :id => id, :hours => hours}))
     end
   end
 
