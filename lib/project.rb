@@ -21,8 +21,9 @@ class Project
     @id = project.first().fetch("id").to_i
   end
 
-  # def ==(comparison)
-  # end
+  def ==(comparison)
+    self.title() == comparison.title()
+  end
 
   # def self.clear
   # end
