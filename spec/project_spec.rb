@@ -10,8 +10,8 @@ describe Project do
 
   context '#id' do
     it 'returns the id of the project before saving project' do
-      project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-      expect(project.id).to eq nil
+      project = Project.new({:title => 'Teaching Kids to Code', :id => nil}) # I use a different initialize method I created that doesn't require id to be passed in as nil
+      expect(project.id).to eq ""
     end
 
     it 'returns the id of the project after saving project' do
