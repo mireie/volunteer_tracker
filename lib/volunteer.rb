@@ -51,7 +51,7 @@ class Volunteer
       name = volunteer.fetch("name")
       id = volunteer.fetch("id")
       hours = volunteer.fetch("hours").to_i
-      volunteers.push(Volunteer.new({ :name => name, :id => id, :hours => hours}))
+      Volunteer.new({ :name => name, :id => id, :hours => hours})
     end
   end
 

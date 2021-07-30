@@ -3,26 +3,7 @@
 <h2>Volunteers</h2>
 <div class="row">
   <div class="col">
-    <% if @volunteers.any? %>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Volunteer</th>
-            <th scope="col">Hours</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @volunteers.sort_by {|volunteer| volunteer.hours}.each do |volunteer|  %>
-            <tr>
-              <th scope="row"><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></th>
-              <td><%= volunteer.hours %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% else %>
-      <p>There are currently no volunteers to display. Be the first!</p>
-    <% end %>
+    <%=erb(:volunteers)%>
     <h3>Add Volunteer</h3>
     <%=erb(:new_volunteer)%>
   </div>
