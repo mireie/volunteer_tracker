@@ -60,3 +60,9 @@ delete ('/project/:id') do
   @project.delete
   redirect to ("/")
 end
+
+delete ('/volunteer/:id') do
+  @project = Volunteer.find(params[:id].to_i)
+  @project.delete
+  redirect to ("/")
+end
