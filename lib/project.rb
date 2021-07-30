@@ -10,14 +10,16 @@ class Project
   end
 
   def id 
-    
+    @id
   end
 
   # def self.all
   # end
 
-  # def save
-  # end
+  def save
+    project = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+    @id = project.first().fetch("id").to_i
+  end
 
   # def ==(comparison)
   # end
