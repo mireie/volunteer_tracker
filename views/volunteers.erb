@@ -10,7 +10,7 @@
           <% @volunteers.sort_by {|volunteer| -volunteer.hours.to_i}.each do |volunteer|  %>
             <tr>
               <th scope="row"><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></th>
-              <td><%= volunteer.hours %></td>
+              <td><%= volunteer.hours.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></td>
             </tr>
           <% end %>
         </tbody>

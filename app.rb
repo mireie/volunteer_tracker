@@ -24,7 +24,7 @@ end
 get ('/volunteers') do
   @projects = Project.all
   @volunteers = Volunteer.all
-  erb(:volunteers)
+  erb(:volunteers_dashboard)
 end
 
 get ('/project/:id') do

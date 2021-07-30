@@ -70,4 +70,8 @@ class Volunteer
     DB.exec("DELETE FROM volunteers WHERE id = #{@id};")
     # DB.exec("DELETE FROM voulenteers WHERE volunteer_id = #{@id};")
   end
+
+  def total_hours
+    DB.exec("SELECT hours FROM volunteers;").sum
+  end
 end

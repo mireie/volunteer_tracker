@@ -1,0 +1,12 @@
+<%
+  hour_sum = 0
+  @volunteers.each do |volunteer| 
+    hour_sum = hour_sum + volunteer.hours.to_i
+  end
+%>
+<h1>Voulenteers</h1>
+<p>Our wonderful volunteers make it all happen! It's not a competition, but <strong><%=@volunteers.sort_by {|volunteer| -volunteer.hours.to_i}.first.name%></strong> is totally winning!</p>
+<p>Together, our <%=@volunteers.length%> volunteers have accumulated <strong><%=hour_sum.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></strong> hours of community service!</p>
+<hr>
+<h2>Voulenteer Leaderboard</h2>
+<%=erb(:volunteers)%>
