@@ -45,8 +45,10 @@ class Project
     end
   end
 
-  # def update()
-  # end
+  def update(params)
+    @title = params.fetch(:title)
+    DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
+  end
 
   # def delete
   # end
