@@ -33,9 +33,6 @@ class Project
     self.title() == comparison.title()
   end
 
-  # def self.clear
-  # end
-
   def self.find(id)
     project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
     if project
@@ -53,5 +50,16 @@ class Project
   def delete
     DB.exec("DELETE FROM projects WHERE id = #{@id};")
     DB.exec("DELETE FROM volunteers WHERE project_id = #{@id};")
+  end
+
+  def volunteers
+    volunteers = []
+    db_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{@id};")
+    db_volunteers.each do |volunteer| 
+      name = volunteer.fetch("name")
+      id = volunteer.fetch("id").to_i
+      volunteers.push(Volunteer.new(:name => name, :id => id))
+    end
+    volunteers
   end
 end

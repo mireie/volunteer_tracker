@@ -1,5 +1,6 @@
 class Volunteer
-  attr_reader :id, :project_id
+  attr_reader :id
+  attr_accessor :project_id
 
   def initialize(attributes)
     attributes.each { |kvp| instance_variable_set("@#{kvp[0].to_s}", kvp[1].to_s.gsub("'") { "&#39;" }) }
@@ -29,7 +30,7 @@ class Volunteer
   end
 
   def save
-    volunteer = DB.exec("INSERT INTO volunteers (name) VALUES ('#{@name}') RETURNING id;")
+    volunteer = DB.exec("INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', #{@project_id}) RETURNING id;")
     @id = volunteer.first().fetch("id").to_i
   end
 
